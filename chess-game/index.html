@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chess Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <h1>Chess Game</h1>
+        <div id="status" class="status">White to move</div>
+      </header>
+      <main>
+        <div id="board" class="board" aria-label="Chess board" role="grid"></div>
+        <aside class="panel">
+          <div class="panel-section">
+            <h2>Controls</h2>
+            <button id="resetBtn">New Game</button>
+            <button id="flipBtn">Flip Board</button>
+          </div>
+          <div class="panel-section">
+            <h2>Play vs AI</h2>
+            <label class="toggle">
+              <input id="aiToggle" type="checkbox" />
+              <span>Enable AI</span>
+            </label>
+            <div class="row">
+              <label>
+                AI Color
+                <select id="aiColor">
+                  <option value="b" selected>Black</option>
+                  <option value="w">White</option>
+                </select>
+              </label>
+              <label>
+                Difficulty
+                <select id="aiLevel">
+                  <option value="1">Easy</option>
+                  <option value="2" selected>Normal</option>
+                  <option value="3">Hard</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div class="panel-section">
+            <h2>Notes</h2>
+            <ul>
+              <li>Castling enabled</li>
+              <li>En passant enabled</li>
+              <li>Promotion choice supported</li>
+            </ul>
+          </div>
+        </aside>
+      </main>
+      <footer>
+        <span>Click a piece, then click a target square.</span>
+      </footer>
+    </div>
+    <div id="promotionModal" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <h3>Choose Promotion</h3>
+        <div class="promo-buttons">
+          <button data-piece="q">Queen</button>
+          <button data-piece="r">Rook</button>
+          <button data-piece="b">Bishop</button>
+          <button data-piece="n">Knight</button>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
